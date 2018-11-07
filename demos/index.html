@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jquery-scrollbox.js demo</title>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Amaranth:400,700" rel="stylesheet" type="text/css">
+<link href="demo.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="jquery.scrollbox.js"></script>
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="header">
+      <div class="text">MARS RESEARCH SERVICE</div>
+    </div>
+    <div class="top-background"></div>
+
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="block-1">
+            <div class="title">Выберите марсоход</div>
+            <select multiple class="selectMars">
+              <option>Марсоход 1</option>
+              <option>Марсоход 2</option>
+              <option>Марсоход 3</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="block-1">
+            <div class="title">Выберите камеру</div>
+            <select multiple name="" class="selectCam">
+              <option value="FHAZ">FHAZ</option>
+              <option value="RHAZ">RHAZ</option>
+              <option value="MAST">MAST</option>
+              <option value="CHEMCAM">CHEMCAM</option>
+              <option value="MAHLI">MAHLI</option>
+              <option value="MARDI">MARDI</option>
+              <option value="NAVCAM">NAVCAM</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="block-1">
+            <div class="title">Введите сол</div>
+            <input type="text" id="selectSol"></input>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <button id="btn">Показать</button>
+
+  <div class="background"></div>
+
+<div class="center">
+
+    <div id="demo5" class="scroll-img">
+      <ul id="demo">
+
+      </ul>
+    </div>
+    <div id="demo5-btn" class="text-center">
+      <button class="btnn" id="demo5-backward">  Backward</button>
+      <button class="btnn" id="demo5-forward">Forward  </button>
+    </div>
+</div>
+
+ <script>
+$(function () {
+
+  $('#demo5').scrollbox({
+    direction: 'h',
+    distance: 134
+  });
+  $('#demo5-backward').click(function () {
+    $('#demo5').trigger('backward');
+  });
+  $('#demo5-forward').click(function () {
+    $('#demo5').trigger('forward');
+  });
+
+});
+
+
+
+var x = [];
+var cam = '';
+var sol = 0;
+var stringToSol = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=';
+var stringToCam = "&camera=";
+var apiKey = '&api_key=h682M1TtACh5yUFgarcjpY16ExxNF8wVRDj9vXVi';
+
+$("#btn").click(function() {
+// cam=$("#sel option:selected").val();
+
+var cam = $('.selectCam').find(':selected').text();
+var sol = parseInt($('#selectSol'). val());
+
+$.ajax({
+
+	url: stringToSol + sol + stringToCam + cam + apiKey,
+	success: function(result) {
+
+		a = JSON.stringify(result);
+		b = JSON.parse(a);
+alert(a);
+
+		var i = 1;
+		var j = 0;
+		//x[i] = result.photos[i].img_src;
+  console.log( b['photos'][0]);
+		x[i] =  b['photos'][0].img_src;
+
+		var demo = document.getElementById("demo");
+		var li = document.createElement("li");
+		var a = document.createElement("a");
+		var img = document.createElement("img");
+		img.setAttribute("src", x[i]);
+
+		img.setAttribute("width", 300);
+		img.setAttribute("height", 450);
+		img.setAttribute("margin-top", 6);
+		img.setAttribute("border", 1 + " solid yellow");
+		a.appendChild(img);
+		li.appendChild(a);
+		demo.appendChild(li);
+
+		j++;
+		// (result.photos).forEach(i) {
+		//
+		// // document.getElementById('_img').src = x; i cant still cant
+		// }
+	}
+});
+
+
+
+
+
+});
+
+var j = 0;
+function myFunction() {
+var demo = document.getElementById("demo");
+var li = document.createElement("li");
+var a = document.createElement("a");
+var img = document.createElement("img");
+img.setAttribute("src", x[i]);
+img.setAttribute("width", 300);
+img.setAttribute("height", 450);
+a.appendChild(img);
+li.appendChild(a);
+$("#demo").appendChild(li);
+j++;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+
+body {
+  padding-bottom: 100px;
+  background-image: url(http://wmh.github.io/circular-slides-generator/static/img/noise.png);
+}
+h1, h2, h3 {
+  padding-top: 20px;
+  font-family: 'Amaranth', sans-serif;
+}
+
+
+.scroll-text ul li {
+  height: 1.5em;
+}
+.center{
+margin-left: 250px;
+
+}
+
+.scroll-img ul {
+  width: 700px;
+  height: 600px;
+  margin: 0;
+}
+.scroll-img ul li {
+  display: inline-block;
+  margin: 10px 0 10px 10px;
+
+}
+
+#demo5.scroll-img ul {
+  width: 5000px;
+}
+#demo5-btn {
+  width: 680px;
+  padding-top: 10px;
+  margin-top: -390px;
+position: absolute;
+margin-left: 360px;
+}
+
+#btn{
+position: absolute;
+text-align: center;
+font-size: 30px;
+height: 50px;
+width: 200px;
+margin-top: 1480px;
+left: 852px;
+border: 1px solid #FFDD00;
+border-radius: 50px;
+background: #261111;
+opacity: 0.5;
+color: white;
+}
+.btnn{
+text-align: center;
+font-size: 30px;
+height: 50px;
+width: 200px;
+border: 1px solid #FFDD00;
+border-radius: 50px;
+background: #261111;
+opacity: 0.5;
+color: white;
+}
+
+
+.body{
+overflow:hidden;
+overflow-y:hidden; /*для вертикального*/
+overflow-x:hidden;
+}
+
+.header{
+width: 100%;
+height: 70px;
+background-color: #000000;
+color: white;
+font-size: 30px;
+opacity: 0.95;
+}
+
+.text{
+font-family: 'Raleway', sans-serif;
+text-align: center;
+padding-top: 17px;
+}
+
+.top-background{
+background-image: url(mars-back.png);
+background-position: center;
+background-repeat: no-repeat;
+background-size: auto;
+width: 1903px;
+height: 1400px;
+position: absolute;
+}
+
+.background{
+background-image: url(back.png);
+background-position: center;
+background-repeat: no-repeat;
+background-size: auto;
+width: 1903px;
+height: 1000px;
+margin-top: 1393px;
+}
+
+.block-1{
+margin-top: 1126px;
+margin-left: 15px;
+width: 330px;
+height: 275px;
+background-color: #261111;
+border: 1px solid #FFDD00;
+opacity: 0.5;
+position: absolute;
+}
+
+.title{
+height: 75px;
+width: 330px;
+border-bottom: 1px solid white;
+color: white;
+font-size: 30px;
+text-align: center;
+padding-top: 15px;
+}
+
+.selectCam{
+width: 300px;
+height: 200px;
+text-align: center;
+vertical-align: middle;
+background: #361E1E;
+margin-left: 15px;
+margin-top: 40px;
+}
+
+.selectCam option{
+height: 30px;
+border-bottom: 1px solid white;
+margin-top: 10px;
+font-size: 20px;
+color: white;
+}
+
+.selectMars{
+width: 300px;
+height: 200px;
+text-align: center;
+vertical-align: middle;
+background: #361E1E;
+margin-left: 15px;
+margin-top: 40px;
+}
+
+.selectMars option{
+height: 30px;
+border-bottom: 1px solid white;
+margin-top: 10px;
+font-size: 20px;
+color: white;
+}
+
+#selectSol{
+  width: 300px;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  background: #361E1E;
+  margin-left: 15px;
+  margin-top: 70px;
+  font-size: 30px;
+  color: white;
+}
+
+
+
+.scroll-img {
+  position: absolute;
+  border: 1px solid #FFDD00;
+opacity: 0.5;
+  width:1400px;
+  height: 323px;
+  overflow: hidden;
+  font-size: 0;
+  margin-top: -780px;
+}
